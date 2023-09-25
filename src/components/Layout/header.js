@@ -62,6 +62,7 @@ const LiBox = styled.li`
 const SearchBox = styled.div`
   flex-grow: 1;
   ${flexCenter}
+  position: relative;
 `;
 
 //인풋 태그 css
@@ -72,6 +73,8 @@ const InputField = styled.input`
   border-radius: 20px;
   margin-right: 10px; //버튼하고 간격
   text-align: center;
+  position: absolute;
+  right: 150px;
 `;
 
 // input 옆에 버튼
@@ -84,6 +87,8 @@ const IconButton = styled.button`
   :hover {
     transform: scale(1.1);
   }
+  position: absolute;
+  right: 180px;
 `;
 
 //??버튼 css

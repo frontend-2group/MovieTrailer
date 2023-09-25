@@ -20,12 +20,6 @@ const HeaderWapper = styled.div`
   font-size: 10px;
   width: 100%;
   height: 90px;
-  background-color: green;
+  /* background-color: green; */
   color: #ccc;
-  position: absolute;
-  /* position: fixed; */
-  bottom: 0;
-  left: 0;
 `;
-
-//여기 fixed 안하고 싶은데... 안붙어용...ㅠㅠㅠㅠ
