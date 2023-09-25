@@ -55,7 +55,7 @@ Communication
 
 ### folder structure
 
-![folderStructure](https://github.com/frontend-2group/MovieTrailer/assets/134191817/66987396-9312-4314-96a3-4266728f9cf9)
+![folderStructure](https://github.com/frontend-2group/MovieTrailer/assets/134191817/66987396-9312-4314-96a3-4266728f9cf9){: width="80%")
 
 ### figma link
 
@@ -63,16 +63,16 @@ https://www.figma.com/file/pGQXz9HbHI4KCgcIov0fz5/%5B-FrontendGroup2-%5D-MovieTr
 
 ### wire frame
 
-![searchResultPage](https://github.com/frontend-2group/MovieTrailer/assets/134191817/b5549d84-94e5-407f-9845-c7be58443b4f)
-![homePage](https://github.com/frontend-2group/MovieTrailer/assets/134191817/e7f58594-17f2-4a28-9fd7-4ec6d1f58220)
-![detailPage](https://github.com/frontend-2group/MovieTrailer/assets/134191817/8b29e9e3-4af9-4172-aa28-1298687a3406)
+![searchResultPage](https://github.com/frontend-2group/MovieTrailer/assets/134191817/b5549d84-94e5-407f-9845-c7be58443b4f){: width="30%"){: .align-images}
+![homePage](https://github.com/frontend-2group/MovieTrailer/assets/134191817/e7f58594-17f2-4a28-9fd7-4ec6d1f58220){: width="30%"){: .align-images}
+![detailPage](https://github.com/frontend-2group/MovieTrailer/assets/134191817/8b29e9e3-4af9-4172-aa28-1298687a3406){: width="30%"){: .align-images}
 
 ### design
 
-![homePageDesign](https://github.com/frontend-2group/MovieTrailer/assets/134191817/fdbecaca-1ff6-45a8-a913-ef72bdf8129e)
-![homePage_hoverNfocus](https://github.com/frontend-2group/MovieTrailer/assets/134191817/9aad4901-cb62-4054-a291-a83544fdf1c8)
-![searchResultPageDesign](https://github.com/frontend-2group/MovieTrailer/assets/134191817/05d0cd8a-706c-4154-a4df-25b1cf872415)
-![detailPageDesign](https://github.com/frontend-2group/MovieTrailer/assets/134191817/9d8102de-13bf-4445-9b2f-84e05f5dffeb)
+![homePageDesign](https://github.com/frontend-2group/MovieTrailer/assets/134191817/fdbecaca-1ff6-45a8-a913-ef72bdf8129e){: width="40%"){: .align-images}
+![homePage_hoverNfocus](https://github.com/frontend-2group/MovieTrailer/assets/134191817/9aad4901-cb62-4054-a291-a83544fdf1c8){: width="40%"){: .align-images}
+![searchResultPageDesign](https://github.com/frontend-2group/MovieTrailer/assets/134191817/05d0cd8a-706c-4154-a4df-25b1cf872415){: width="40%"){: .align-images}
+![detailPageDesign](https://github.com/frontend-2group/MovieTrailer/assets/134191817/9d8102de-13bf-4445-9b2f-84e05f5dffeb){: width="40%"){: .align-images}
 
 ### preview MV
 
