@@ -73,16 +73,16 @@ https://www.figma.com/file/pGQXz9HbHI4KCgcIov0fz5/%5B-FrontendGroup2-%5D-MovieTr
 
 ### design
 
-<p>왼쪽은 메인 페이지입니다. 왼쪽은 cursor :hover,  :focus 시 변하게 될 css가 적용된 메인 페이지 입니다.</p>
+<p align="center">왼쪽은 메인 페이지입니다. 왼쪽은 cursor :hover,  :focus 시 변하게 될 css가 적용된 메인 페이지 입니다.</p>
 <p align="center">
     <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/fdbecaca-1ff6-45a8-a913-ef72bdf8129e" width="40%">
     <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/9aad4901-cb62-4054-a291-a83544fdf1c8" width="40%">
 </p>
-<p>검색 시 보이게 될 화면입니다.</p>
+<p align="center">검색 시 보이게 될 화면입니다.</p>
 <p align="center">
     <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/05d0cd8a-706c-4154-a4df-25b1cf872415" width="40%">
 </p>
-<p>상세보기 버튼 클릭 시 보이게 될 영화의 상세 정보를 그려주는 화면입니다.</p>
+<p align="center">상세보기 버튼 클릭 시 보이게 될 영화의 상세 정보를 그려주는 화면입니다.</p>
 <p align="center">
     <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/9d8102de-13bf-4445-9b2f-84e05f5dffeb" width="40%">
 </>
