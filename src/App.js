@@ -26,11 +26,6 @@ function App() {
       <ScrollTop />
     </ThemeProvider>
   );
-
-function App() {
-  return <div></div>;
-
-
 }
 
 export default App;
