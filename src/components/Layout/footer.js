@@ -20,6 +20,7 @@ const HeaderWapper = styled.div`
   font-size: 10px;
   width: 100%;
   height: 90px;
-  /* background-color: green; */
+  background-color: #000;
+  text-align: center;
   color: #ccc;
 `;
