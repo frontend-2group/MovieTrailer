@@ -1,4 +1,18 @@
 
+import React from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
+import HomePage from "./pages/homePage";
+
+const queryClient = new QueryClient();
+
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <HomePage />
+    </QueryClientProvider>
+  );
+
+
 import "./App.css";
 import { ThemeProvider } from "styled-components";
 import theme from "./styles/theme.style";
@@ -15,6 +29,7 @@ function App() {
 
 function App() {
   return <div></div>;
+
 
 }
 
