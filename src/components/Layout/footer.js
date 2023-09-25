@@ -18,8 +18,8 @@ export default Footer;
 const HeaderWapper = styled.div`
   width: 100%;
   height: 90px;
-  position: absolute;
-  bottom: 0;
+  /* position: absolute;
+  bottom: 0; */
 
   // 임시작성입니다.
   background-color: #000;
