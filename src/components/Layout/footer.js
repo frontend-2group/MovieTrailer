@@ -22,15 +22,13 @@ const HeaderWapper = styled.div`
   position: absolute;
   bottom: 0;
 
-  //
+  // 임시작성
   background-color: #000;
   text-align: center;
-
   color: #ccc;
 `;
 
 const FooterTextBox = styled.div`
   font-size: 10px;
-
   padding-top: 20px;
 `;
