@@ -6,6 +6,7 @@ import { ThemeProvider } from "styled-components";
 import theme from "./styles/theme.style";
 import GlobalStyles from "./styles/global.style";
 import ScrollTop from "./components/scrollTop";
+import Layout from "./components/Layout";
 
 // 아래 두 코드 터미널에 입력해서 설치해주세요
 // npm install react-query --force
@@ -18,8 +19,10 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <ScrollTop />
-        <HomePage />
+        <Layout>
+          <ScrollTop />
+          <HomePage />
+        </Layout>
       </ThemeProvider>
     </QueryClientProvider>
   );
