@@ -1,6 +1,7 @@
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
+import { flexAlignCenter, flexCenter } from "../../styles/common.style";
 const Header = () => {
   return (
     <HeaderWapper>
@@ -30,31 +31,21 @@ const HeaderWapper = styled.div`
   width: 1024;
   height: 80px;
   padding: 0 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-content: space-between;
+  ${flexCenter}/* justify-content: space-between; */
 `;
 
 //logo
 const ImageBox = styled.div`
   width: 100px;
   height: 40px;
-  /* position: absolute;
-  left: 10%;
-  & > img {
-    width: 100%;
-  } */
 `;
 
 const UlBox = styled.ul`
-  display: flex;
-  align-items: center;
+  ${flexAlignCenter}
   /* justify-content: center; */
-  /* justify-content: space-between; */
-  //지울것
-  /* box-sizing: border-box; */
+  justify-content: space-between;
   list-style: none;
+  margin-left: 40px;
 `;
 
 // li 간격 조절
@@ -64,14 +55,13 @@ const LiBox = styled.li`
     margin-right: 0;
   }
   cursor: pointer;
+  color: #fff;
 `;
 
 //input 감싸는 박스
 const SearchBox = styled.div`
   flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${flexCenter}
 `;
 
 //인풋 태그 css
