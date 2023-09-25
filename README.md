@@ -55,7 +55,9 @@ Communication
 
 ### folder structure
 
-<center><img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/66987396-9312-4314-96a3-4266728f9cf9" width="60%"></center>
+<p align="center">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/66987396-9312-4314-96a3-4266728f9cf9" width="50%">
+</p>
 
 ### figma link
 
@@ -63,16 +65,20 @@ https://www.figma.com/file/pGQXz9HbHI4KCgcIov0fz5/%5B-FrontendGroup2-%5D-MovieTr
 
 ### wire frame
 
-<center><img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/b5549d84-94e5-407f-9845-c7be58443b4f" width="30%"></center>
-<center><img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/e7f58594-17f2-4a28-9fd7-4ec6d1f58220" width="30%"></center>
-<center><img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/8b29e9e3-4af9-4172-aa28-1298687a3406" width="30%"></center>
+<p align="center">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/b5549d84-94e5-407f-9845-c7be58443b4f" width="30%">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/e7f58594-17f2-4a28-9fd7-4ec6d1f58220" width="30%">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/8b29e9e3-4af9-4172-aa28-1298687a3406" width="30%">
+</p>
 
 ### design
 
-<center><img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/fdbecaca-1ff6-45a8-a913-ef72bdf8129e" width="40%"></center>
-<center><img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/9aad4901-cb62-4054-a291-a83544fdf1c8" width="40%"></center>
-<center><img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/05d0cd8a-706c-4154-a4df-25b1cf872415" width="40%"></center>
-<center><img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/9d8102de-13bf-4445-9b2f-84e05f5dffeb" width="40%"></center>
+<p align="center">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/fdbecaca-1ff6-45a8-a913-ef72bdf8129e" width="40%">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/9aad4901-cb62-4054-a291-a83544fdf1c8" width="40%">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/05d0cd8a-706c-4154-a4df-25b1cf872415" width="40%">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/9d8102de-13bf-4445-9b2f-84e05f5dffeb" width="40%">
+</p>
 
 ### preview MV
 
