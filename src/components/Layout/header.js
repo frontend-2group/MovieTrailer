@@ -2,7 +2,24 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import { flexAlignCenter, flexCenter } from "../../styles/common.style";
+import { useNavigate } from "react-router-dom";
+import { MOVIE_QUERY_KEY } from "../../consts/movieQueryKey";
 const Header = () => {
+  const navigate = useNavigate();
+
+  const onOpenUpcomingMovieList = () => {
+    navigate(MOVIE_QUERY_KEY.UPCOMING);
+  };
+  const onOpenPopularMovieList = () => {
+    navigate(MOVIE_QUERY_KEY.POPULAR);
+  };
+  const onOpenTopRatedMovieList = () => {
+    navigate(MOVIE_QUERY_KEY.TOP_RATED);
+  };
+  const onOpenNowPlayingMovieList = () => {
+    navigate(MOVIE_QUERY_KEY.NOW_PLAYING);
+  };
+
   return (
     <HeaderWapper>
       <ImageBox>
@@ -10,10 +27,10 @@ const Header = () => {
       </ImageBox>
       <div>
         <UlBox>
-          <LiBox>개봉 예정</LiBox>
-          <LiBox>인기 작품</LiBox>
-          <LiBox>높은 평점</LiBox>
-          <LiBox>상영 중</LiBox>
+          <LiBox onClick={onOpenUpcomingMovieList}>개봉 예정</LiBox>
+          <LiBox onClick={onOpenPopularMovieList}>인기 작품</LiBox>
+          <LiBox onClick={onOpenTopRatedMovieList}>높은 평점</LiBox>
+          <LiBox onClick={onOpenNowPlayingMovieList}>상영 중</LiBox>
         </UlBox>
       </div>
       <SearchBox>
