@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { MOVIE_QUERY_KEY } from "../../consts/movieQueryKey";
 const Header = () => {
   const navigate = useNavigate();
+  const onClickMainHomePage = () => {
+    navigate("/");
+  };
 
   const onOpenUpcomingMovieList = () => {
     navigate(MOVIE_QUERY_KEY.UPCOMING);
@@ -22,7 +25,7 @@ const Header = () => {
 
   return (
     <HeaderWrapper>
-      <ImageBox>
+      <ImageBox onClick={onClickMainHomePage}>
         <img src="/images/logo.png" alt="로고" />
       </ImageBox>
       <div>
@@ -57,6 +60,9 @@ const HeaderWrapper = styled.div`
 const ImageBox = styled.div`
   width: 100px;
   height: 40px;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const UlBox = styled.ul`
