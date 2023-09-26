@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { flexAlignCenter, flexCenter } from "../../styles/common.style";
 const Header = () => {
   return (
-    <HeaderWapper>
+    <HeaderWrapper>
       <ImageBox>
         <img src="/images/logo.png" alt="로고" />
       </ImageBox>
@@ -22,12 +22,14 @@ const Header = () => {
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </IconButton>
       </SearchBox>
-      <ProfileImgButton>?</ProfileImgButton>
-    </HeaderWapper>
+      <ProfileImgButton>user</ProfileImgButton>
+    </HeaderWrapper>
   );
 };
+
 export default Header;
-const HeaderWapper = styled.div`
+
+const HeaderWrapper = styled.div`
   width: 1024;
   height: 80px;
   padding: 0 50px;
