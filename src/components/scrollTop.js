@@ -1,39 +1,58 @@
 import styled from "styled-components";
-import toTop from "../img/to_top.png";
-import toTopHover from "../img/to_tophover.png";
-import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
 
 const ScrollTop = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll);
+  });
+
   const onClickTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const [isHover, setIsHover] = useState(false);
-
   return (
-    <Wrap
-      onMouseOver={() => setIsHover(true)}
-      onMouseOut={() => setIsHover(false)}
+    <ButtonWrap
+      onClick={onClickTop}
+      className={scrollPosition < 20 ? "hide" : ""}
     >
-      <img
-        src={isHover ? toTopHover : toTop}
-        alt="toTopIcon"
-        onClick={onClickTop}
-        width={60}
-        height={60}
-      ></img>
-    </Wrap>
+      <FontAwesomeIcon
+        icon={faCaretUp}
+        style={{ color: "#ffffff" }}
+        size="2xl"
+      />
+    </ButtonWrap>
   );
 };
 
 export default ScrollTop;
 
-const Wrap = styled.div`
+const ButtonWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
-  bottom: 4%;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  bottom: 10%;
   right: 2%;
+  opacity: 0.3;
+  transition: all ease-in-out 0.3s;
 
-  & > img:hover {
+  &.hide {
+    opacity: 0;
+  }
+
+  &:hover {
     cursor: pointer;
+    opacity: 1;
   }
 `;
