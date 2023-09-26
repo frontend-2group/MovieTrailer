@@ -16,11 +16,13 @@ export default Footer;
 
 const HeaderWapper = styled.div`
   ${flexCenter}
-  flex-direction: column;
-  font-size: 10px;
-  width: 100%;
-  height: 90px;
-  background-color: #000;
   text-align: center;
-  color: #ccc;
+  flex-direction: column;
+  width: 100%;
+  height: 80px;
+  margin-top: 40px;
+  line-height: 20px;
+  background-color: ${({ theme }) => theme.COLORS.black};
+  font-size: ${({ theme }) => theme.FONT_SIZE.small};
+  color: ${({ theme }) => theme.COLORS.primary.gray};
 `;
