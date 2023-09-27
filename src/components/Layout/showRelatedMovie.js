@@ -203,4 +203,5 @@ const RelatedMovieList = styled.li`
 `;
 const ShowMessage = styled.li`
   margin-top: 15%;
+  margin-bottom: 10%;
 `;
