@@ -19,7 +19,6 @@ const router = createBrowserRouter([
       },
       {
         path: "/:movie/:movieId",
-        path: "/detailPage",
         element: <DetailPage />,
       },
       {
