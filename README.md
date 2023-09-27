@@ -10,7 +10,7 @@
 | 09/24 | 디자인 작업 진행, 폴더 구조 계획 |
 | 09/25 | 문서 구조에 맞게 route 설정, header & footer, scrollTop 기능 구현, 공용 CSS 파일 생성 |
 | 09/26 | 영화 목록 필더링 (header filterBar)기능 구현, 검색 기능을 통해 원하는 키워드가 포함된 영화 찾기 기능 구현, 디자인 추가 |
-| 09/27 | skeleton UI, error boundary |
+| 09/27 | detail page 구현, skeleton UI, error boundary, git commit 내역 얽힌 부분 해결 |
 | 09/28 | |
 
 ### developers

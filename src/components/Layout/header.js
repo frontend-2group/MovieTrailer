@@ -53,6 +53,7 @@ const HeaderWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   background: rgba(0, 0, 0, 0.9);
+  z-index: 100;
 `;
 
 const Logo = styled.div`
