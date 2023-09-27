@@ -1,9 +1,9 @@
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
-import { flexAlignCenter, flexCenter } from "../../styles/common.style";
+import { flexAlignCenter } from "../../styles/common.style";
 import { useNavigate } from "react-router-dom";
 import { MOVIE_QUERY_KEY } from "../../consts/movieQueryKey";
+import ShowRelatedMovie from "./showRelatedMovie";
+
 const Header = () => {
   const navigate = useNavigate();
   const onClickMainHomePage = () => {
@@ -25,24 +25,17 @@ const Header = () => {
 
   return (
     <HeaderWrapper>
-      <ImageBox onClick={onClickMainHomePage}>
+      <Logo onClick={onClickMainHomePage}>
         <img src="/images/logo.png" alt="로고" />
-      </ImageBox>
-      <div>
-        <UlBox>
-          <LiBox onClick={onOpenUpcomingMovieList}>개봉 예정</LiBox>
-          <LiBox onClick={onOpenPopularMovieList}>인기 작품</LiBox>
-          <LiBox onClick={onOpenTopRatedMovieList}>높은 평점</LiBox>
-          <LiBox onClick={onOpenNowPlayingMovieList}>상영 중</LiBox>
-        </UlBox>
-      </div>
-      <SearchBox>
-        <InputField placeholder="검색어를 입력하세요" />
-        <IconButton>
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
-        </IconButton>
-      </SearchBox>
-      <ProfileImgButton>user</ProfileImgButton>
+      </Logo>
+      <FilterBar>
+        <Standard onClick={onOpenUpcomingMovieList}>개봉 예정</Standard>
+        <Standard onClick={onOpenPopularMovieList}>인기 작품</Standard>
+        <Standard onClick={onOpenTopRatedMovieList}>높은 평점</Standard>
+        <Standard onClick={onOpenNowPlayingMovieList}>상영 중</Standard>
+      </FilterBar>
+      <ShowRelatedMovie />
+      <UserProfile>user</UserProfile>
     </HeaderWrapper>
   );
 };
@@ -50,75 +43,45 @@ const Header = () => {
 export default Header;
 
 const HeaderWrapper = styled.div`
-  width: 1024;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 80px;
   padding: 0 50px;
-  ${flexCenter}/* justify-content: space-between; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
 `;
 
-//logo
-const ImageBox = styled.div`
+const Logo = styled.div`
   width: 100px;
   height: 40px;
-  :hover {
-    cursor: pointer;
-  }
 `;
 
-const UlBox = styled.ul`
+const FilterBar = styled.ul`
+  position: absolute;
+  left: 16%;
+  width: 36%;
   ${flexAlignCenter}
-  /* justify-content: center; */
-  justify-content: space-between;
-  list-style: none;
-  margin-left: 40px;
+  justify-content: space-evenly;
 `;
 
-// li 간격 조절
-const LiBox = styled.li`
-  margin-right: 40px;
-  &:last-child {
-    margin-right: 0;
-  }
+const Standard = styled.li`
   cursor: pointer;
-  color: ${({ theme }) => theme.COLORS.white};
-`;
+  color: #fff;
 
-//input 감싸는 박스
-const SearchBox = styled.div`
-  flex-grow: 1;
-  ${flexCenter}
-  position: relative;
-`;
-
-//인풋 태그 css
-const InputField = styled.input`
-  width: 400px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  margin-right: 10px; //버튼하고 간격
-  text-align: center;
-  position: absolute;
-  right: 150px;
-`;
-
-// input 옆에 버튼
-const IconButton = styled.button`
-  background-color: ${({ theme }) => theme.COLORS.white};
-  color: ${({ theme }) => theme.COLORS.black};
-  font-size: ${({ theme }) => theme.FONT_SIZE.large};
-  border: none;
-  cursor: pointer;
-  :hover {
-    transform: scale(1.1);
+  &:hover {
+    font-weight: bold;
+    color: #ff0458;
   }
-  position: absolute;
-  right: 180px;
 `;
 
-//user버튼 css
-const ProfileImgButton = styled.button`
-  background-color: ${({ theme }) => theme.COLORS.primary.gray};
+// UserInfo.
+// 로그인/로그아웃 로직 구현 시 활용할 수 있는 회원 프로필
+const UserProfile = styled.button`
+  background-color: #ccc;
   border: none;
   border-radius: 50%;
   cursor: pointer;
