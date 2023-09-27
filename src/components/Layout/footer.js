@@ -3,18 +3,18 @@ import { flexCenter } from "../../styles/common.style";
 
 const Footer = () => {
   return (
-    <HeaderWapper>
+    <FooterWrapper>
       <p>ALL RIGHTS RESERVED © FRONTEND TEAM 2</p>
       <p>
         KIM-JIWON AHN-JUHYEON OH-JUYEON LEE-DAEKYEONG JEON-KYEONGMI
         JEONG-SOOHYUN
       </p>
-    </HeaderWapper>
+    </FooterWrapper>
   );
 };
 export default Footer;
 
-const HeaderWapper = styled.div`
+const FooterWrapper = styled.div`
   ${flexCenter}
   text-align: center;
   flex-direction: column;

@@ -39,11 +39,10 @@ const MovieList = () => {
   return (
     <MovieWrapper>
       <MovieGrid>
-        {movieList?.map((movie) => (
+        {movieList?.map((movie, index) => (
           <MovieTrailer key={movie.id}>
             <MovieImg
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              onClick={() => onOpenDetailPage(movie)}
             />
           </MovieTrailer>
         ))}
