@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { MOVIE_QUERY_KEY } from "../../consts/movieQueryKey";
 const Header = () => {
   const navigate = useNavigate();
+  const onClickMainHomePage = () => {
+    navigate("/");
+  };
 
   const onOpenUpcomingMovieList = () => {
     navigate(MOVIE_QUERY_KEY.UPCOMING);
@@ -21,8 +24,8 @@ const Header = () => {
   };
 
   return (
-    <HeaderWapper>
-      <ImageBox>
+    <HeaderWrapper>
+      <ImageBox onClick={onClickMainHomePage}>
         <img src="/images/logo.png" alt="로고" />
       </ImageBox>
       <div>
@@ -39,12 +42,14 @@ const Header = () => {
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </IconButton>
       </SearchBox>
-      <ProfileImgButton>?</ProfileImgButton>
-    </HeaderWapper>
+      <ProfileImgButton>user</ProfileImgButton>
+    </HeaderWrapper>
   );
 };
+
 export default Header;
-const HeaderWapper = styled.div`
+
+const HeaderWrapper = styled.div`
   width: 1024;
   height: 80px;
   padding: 0 50px;
@@ -55,6 +60,9 @@ const HeaderWapper = styled.div`
 const ImageBox = styled.div`
   width: 100px;
   height: 40px;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const UlBox = styled.ul`
@@ -72,7 +80,7 @@ const LiBox = styled.li`
     margin-right: 0;
   }
   cursor: pointer;
-  color: #fff;
+  color: ${({ theme }) => theme.COLORS.white};
 `;
 
 //input 감싸는 박스
@@ -96,11 +104,11 @@ const InputField = styled.input`
 
 // input 옆에 버튼
 const IconButton = styled.button`
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.COLORS.white};
+  color: ${({ theme }) => theme.COLORS.black};
+  font-size: ${({ theme }) => theme.FONT_SIZE.large};
   border: none;
   cursor: pointer;
-  font-size: 20px;
-  color: #000;
   :hover {
     transform: scale(1.1);
   }
@@ -108,9 +116,9 @@ const IconButton = styled.button`
   right: 180px;
 `;
 
-//??버튼 css
+//user버튼 css
 const ProfileImgButton = styled.button`
-  background-color: #ccc;
+  background-color: ${({ theme }) => theme.COLORS.primary.gray};
   border: none;
   border-radius: 50%;
   cursor: pointer;
