@@ -59,6 +59,7 @@ const HeaderWrapper = styled.div`
 const Logo = styled.div`
   width: 100px;
   height: 40px;
+  cursor: pointer;
 `;
 
 const FilterBar = styled.ul`
