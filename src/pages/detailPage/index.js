@@ -25,7 +25,6 @@ const DetailPage = () => {
             allowFullScreen
           ></DetailMovieVideo>
         )}
-
         <TextBox>
           <MovieStar>★{Math.round(movieData.vote_average)}</MovieStar>
           <MovieTitle>{movieData.title}</MovieTitle>
@@ -35,12 +34,10 @@ const DetailPage = () => {
             <MovieExplain>{movieData.overview}</MovieExplain>
           </TextWrap>
         </TextBox>
-
         <SimiliarMovieBox>
           <SimiliarMovieBoxMent>이 영화와 비슷해요!</SimiliarMovieBoxMent>
           <SimilarMovie movieId={movieId} />
         </SimiliarMovieBox>
-
         {/* 리뷰컴포넌트 */}
         <Reviews movieId={movieId} />
       </DetailPageWrapper>
