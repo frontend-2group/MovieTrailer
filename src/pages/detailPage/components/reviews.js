@@ -101,7 +101,7 @@ const UserNickName = styled.span`
 
 //review
 const UserReview = styled.div`
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   line-height: 20px;
   border-bottom: 1px solid #ff0458;
 `;
