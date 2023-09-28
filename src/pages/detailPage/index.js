@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { getDetailMoviePage, getMovieVideo } from "../../api";
 import styled from "styled-components";
-import { DetailMovieTitle, flexAlignCenter } from "../../styles/common.style";
+import { DetailMovieTitle } from "../../styles/common.style";
 import SimilarMovie from "./components/similarMovie";
 import Reviews from "./components/reviews";
 
