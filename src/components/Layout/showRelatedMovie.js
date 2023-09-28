@@ -10,7 +10,7 @@ const ShowRelatedMovie = () => {
   const { data: movieData } = useQuery(["searchKeyword"], () =>
     getSearchMovie("Avenger")
   );
-  movieData && console.log(movieData);
+  // movieData && console.log(movieData);
 
   const [inputValue, setInputValue] = useState("");
   const [hasInputValue, setHasInputValue] = useState(false);
@@ -21,8 +21,9 @@ const ShowRelatedMovie = () => {
   // filter movies which includes(contains) inputValue
   const showDropDownList = () => {
     if (inputValue) {
-      const results = [];
-      const RelatedMovieList = results.filter((title) =>
+      const titleArray = [movieData.results];
+      const RelatedMovieList = titleArray.filter((title) =>
+        // typeError : title.includes is not a function
         title.includes(inputValue)
       );
       setDropDownList(RelatedMovieList);
