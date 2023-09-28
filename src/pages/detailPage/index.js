@@ -4,6 +4,7 @@ import { getDetailMoviePage, getMovieVideo } from "../../api";
 import styled from "styled-components";
 import { DetailMovieTitle, flexAlignCenter } from "../../styles/common.style";
 import SimilarMovie from "./components/similarMovie";
+import Reviews from "./components/reviews";
 
 const DetailPage = () => {
   const params = useParams();
@@ -26,7 +27,7 @@ const DetailPage = () => {
         )}
 
         <TextBox>
-          <MovieStar>★{movieData.vote_average}</MovieStar>
+          <MovieStar>★{Math.round(movieData.vote_average)}</MovieStar>
           <MovieTitle>{movieData.title}</MovieTitle>
           <ReleaseDate>release {movieData.release_date}</ReleaseDate>
           <TextWrap>
@@ -39,6 +40,9 @@ const DetailPage = () => {
           <SimiliarMovieBoxMent>이 영화와 비슷해요!</SimiliarMovieBoxMent>
           <SimilarMovie movieId={movieId} />
         </SimiliarMovieBox>
+
+        {/* 리뷰컴포넌트 */}
+        <Reviews movieId={movieId} />
       </DetailPageWrapper>
     )
   );
