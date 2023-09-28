@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
   }
   body {
     background-color: #000000;
+    font-family: 'Noto Sans KR', sans-serif;
   }
   button {
     border: none;

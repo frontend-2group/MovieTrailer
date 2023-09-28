@@ -3,49 +3,31 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { flexCenter } from "../../styles/common.style";
+import { useQuery } from "react-query";
+import { getSearchMovie } from "../../api";
 
-const ShowRelatedMovie = ({ MovieList }) => {
-  // input 검색어가 포함된 영화 목록 가져오기
-  // 목록이 안 가져와져서 일단 아래 sampleDropDown으로 대체해서 로직 구현
-  // console.log(MovieList);
-
-  // sample array: 영화 장르에 관한 텍스트 배열
-  const sampleTextArray = [
-    "로맨스코미디",
-    "로맨스",
-    "한국드라마",
-    "호러",
-    "스릴러",
-    "미국드라마",
-    "영국드라마",
-    "웹드라마",
-    "애니메이션",
-    "시대극",
-    "추리",
-  ];
-  // const relatedDropDown = [];
+const ShowRelatedMovie = () => {
+  const { data: movieData } = useQuery(["searchKeyword"], () =>
+    getSearchMovie("Avenger")
+  );
+  movieData && console.log(movieData);
 
   const [inputValue, setInputValue] = useState("");
-  // isHaveInputValue: 입력된 input값이 있는지의 여부
-  const [isHaveInputValue, setIsHaveInputValue] = useState(false);
-  // dropdown에 보여줄 영화 추천 목록(리스트) >> 일단 sampleTextArray로 처리
-  const [dropDownList, setDropDownList] = useState(sampleTextArray);
-  // dropDownList에서 사용자가 선택한 영화의 index
-  const [dropDownItemIndex, setDropDownItemIndex] = useState(-1);
+  const [hasInputValue, setHasInputValue] = useState(false);
+  const [dropDownList, setDropDownList] = useState("");
+  const [dropDownMovieIndex, setDropDownMovieIndex] = useState(-1);
 
   // show related movieList
-  // filter movies which includes(contains) inputValue and push to relatedDropDown(empty array)
+  // filter movies which includes(contains) inputValue
   const showDropDownList = () => {
     if (inputValue) {
-      console.log(inputValue); // log되기는 함
-      // inputValue에 어떠한 값이 들어왔을 때 관련 드롭다운 띄워주기
-      // sampleTextArray >> MovieList 로 변경 요망
-      const RelatedMovieList = sampleTextArray.filter((textValue) =>
-        textValue.includes(inputValue)
+      const results = [];
+      const RelatedMovieList = results.filter((title) =>
+        title.includes(inputValue)
       );
       setDropDownList(RelatedMovieList);
     } else {
-      setIsHaveInputValue(false);
+      setHasInputValue(false);
       setDropDownList([]);
     }
   };
@@ -53,31 +35,31 @@ const ShowRelatedMovie = ({ MovieList }) => {
   const checkInputValue = (e) => {
     e.preventDefault();
     setInputValue(e.target.value);
-    setIsHaveInputValue(true);
+    setHasInputValue(true);
   };
 
   // dropdown에서 특정 영화 클릭 시 발생할 이벤트
   const clickedDropDownItem = (clickedItem) => {
     setInputValue(clickedItem);
-    setIsHaveInputValue(false);
+    setHasInputValue(false);
   };
 
   // 키보드 조작 관련 로직 : keyUp, keyDown, Enter
-  // dropdown의 요소를 선택하기 위해 키보드에 버튼을 눌릴 때마다, 아래의 조건에 따라 dropDownItemIndex 값 업데이트
+  // dropdown의 요소를 선택하기 위해 키보드에 버튼을 눌릴 때마다, 아래의 조건에 따라 dropDownMovieIndex 값 업데이트
   const handleDropDownKey = (e) => {
     e.preventDefault();
     // if something is written...
-    if (isHaveInputValue) {
+    if (hasInputValue) {
       if (
         e.key === "ArrowDown" &&
-        dropDownList.length - 1 > dropDownItemIndex
+        dropDownList.length - 1 > dropDownMovieIndex
       ) {
-        setDropDownItemIndex(dropDownItemIndex + 1);
-      } else if (e.key === "ArrowUp" && dropDownItemIndex >= 0)
-        setDropDownItemIndex(dropDownItemIndex - 1);
-      else if (e.key === "Enter" && dropDownItemIndex >= 0) {
-        clickedDropDownItem(dropDownList[dropDownItemIndex]);
-        setDropDownItemIndex(-1);
+        setDropDownMovieIndex(dropDownMovieIndex + 1);
+      } else if (e.key === "ArrowUp" && dropDownMovieIndex >= 0)
+        setDropDownMovieIndex(dropDownMovieIndex - 1);
+      else if (e.key === "Enter" && dropDownMovieIndex >= 0) {
+        clickedDropDownItem(dropDownList[dropDownMovieIndex]);
+        setDropDownMovieIndex(-1);
       }
     }
   };
@@ -86,7 +68,7 @@ const ShowRelatedMovie = ({ MovieList }) => {
 
   return (
     <Wrapper>
-      <InputBox isHaveInputValue={isHaveInputValue}>
+      <InputBox hasInputValue={hasInputValue}>
         <SearchIcon>
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
@@ -102,24 +84,22 @@ const ShowRelatedMovie = ({ MovieList }) => {
         />
         <DeleteButton onClick={() => setInputValue("")}>&times;</DeleteButton>
       </InputBox>
-      {isHaveInputValue && (
+      {hasInputValue && (
         <DropDownWrapper>
           {dropDownList.length === 0 && (
             <ShowMessage>해당 단어와 관련 있는 영화가 없습니다.</ShowMessage>
           )}
-          {dropDownList.map((dropDownItem, dropDownIndex) => {
+          {dropDownList.map((movie, movieIndex) => {
             return (
               <RelatedMovieList
-                key={dropDownIndex}
-                onClick={() => clickedDropDownItem(dropDownItem)}
+                key={movieIndex}
+                onClick={() => clickedDropDownItem(movie)}
                 onMouseOver={() => {
-                  setDropDownItemIndex(dropDownIndex);
+                  setDropDownMovieIndex(movieIndex);
                 }}
-                className={
-                  dropDownItemIndex === dropDownIndex ? "selected" : ""
-                }
+                className={dropDownMovieIndex === movieIndex ? "selected" : ""}
               >
-                {dropDownItem}
+                {movie}
               </RelatedMovieList>
             );
           })}
