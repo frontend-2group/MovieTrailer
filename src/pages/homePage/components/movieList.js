@@ -55,6 +55,7 @@ const MovieList = () => {
 export default MovieList;
 
 const MovieWrapper = styled.div`
+  margin-top: 900px;
   display: flex;
   justify-content: center;
 `;
