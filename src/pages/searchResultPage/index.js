@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { flexAlignCenter, flexCenter } from "../../styles/common.style";
+import { flexCenter } from "../../styles/common.style";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getSearchMovie } from "../../api";
@@ -11,7 +11,6 @@ const SearchResultPage = () => {
   };
 
   const { data } = useQuery(["qqqqq"], () => getSearchMovie("Avengers"));
-
   data && console.log(data);
 
   return (
