@@ -35,6 +35,9 @@ const MovieList = () => {
   // 상세 페이지 이동 함수
   const onOpenDetailPage = (movie) => {
     navigate(`/${pramsKey}/:${movie.id}`);
+    window.scroll({
+      top: 0,
+    });
   };
 
   return (

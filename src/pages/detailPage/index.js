@@ -10,10 +10,13 @@ const DetailPage = () => {
   const params = useParams();
   const movieId = params.movieId.replace(":", "");
 
-  const { data: movieData } = useQuery(["detailMovie"], () =>
-    getDetailMoviePage(movieId)
+  const { data: movieData, refetch: movieDataRefetch } = useQuery(
+    ["detailMovie"],
+    () => getDetailMoviePage(movieId)
   );
-  const { data: videoData } = useQuery(["video"], () => getMovieVideo(movieId));
+  const { data: videoData, refetch: videoRefetch } = useQuery(["video"], () =>
+    getMovieVideo(movieId)
+  );
 
   return (
     movieData !== undefined && (
@@ -36,7 +39,11 @@ const DetailPage = () => {
         </TextBox>
         <SimiliarMovieBox>
           <SimiliarMovieBoxMent>이 영화와 비슷해요!</SimiliarMovieBoxMent>
-          <SimilarMovie movieId={movieId} />
+          <SimilarMovie
+            movieId={movieId}
+            movieDataRefetch={movieDataRefetch}
+            videoRefetch={videoRefetch}
+          />
         </SimiliarMovieBox>
         {/* 리뷰컴포넌트 */}
         <Reviews movieId={movieId} />
