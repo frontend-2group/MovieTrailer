@@ -7,19 +7,19 @@ const Banner = () => {
   const params = useParams();
   const movieId = params.movieId;
 
-  const { data: videoData } = useQuery(["video"], () => getMovieVideo(movieId));
+  // const { data: videoData } = useQuery(["video"], () => getMovieVideo(movieId));
   // console.log(videoData); // undefined
 
   // 개봉 예정작들 포스터 이미지 슬라이드?? 아니면 대표 영화 영상 무제한 틀어놓기? 배너 어떻게 할까요
   return (
     <Wrapper>
-      {videoData && (
-        <ShowContent>
-          <Video
-            src={`https://www.youtube.com/embed/${videoData.results[0].key}?autoplay=1&mute=1`}
-          />
-        </ShowContent>
-      )}
+      {/* {videoData && ( */}
+      <ShowContent>
+        {/* <Video
+          src={`https://www.youtube.com/embed/${videoData.results[0].key}?autoplay=1&mute=1`}
+        /> */}
+      </ShowContent>
+      {/* )} */}
       <TextBox>
         <MovieTitle>movie title</MovieTitle>
         <ReleaseDate>release 2024.00.00</ReleaseDate>
