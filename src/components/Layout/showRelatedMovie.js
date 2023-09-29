@@ -8,25 +8,30 @@ import { getSearchMovie } from "../../api";
 
 const ShowRelatedMovie = () => {
   const { data: movieData } = useQuery(["searchKeyword"], () =>
-    getSearchMovie("Avenger")
+    getSearchMovie(inputValue)
   );
-  // movieData && console.log(movieData);
 
   const [inputValue, setInputValue] = useState("");
   const [hasInputValue, setHasInputValue] = useState(false);
-  const [dropDownList, setDropDownList] = useState("");
+  const [dropDownList, setDropDownList] = useState();
   const [dropDownMovieIndex, setDropDownMovieIndex] = useState(-1);
 
   // show related movieList
   // filter movies which includes(contains) inputValue
   const showDropDownList = () => {
-    if (inputValue) {
-      const titleArray = [movieData.results];
-      const RelatedMovieList = titleArray.filter((title) =>
-        // typeError : title.includes is not a function
-        title.includes(inputValue)
-      );
-      setDropDownList(RelatedMovieList);
+    // validation check
+    const regExp = /[A-Za-z]+/gi;
+    console.log(inputValue.match(regExp));
+
+    if (inputValue.match(regExp)) {
+      const titleArray = movieData.results;
+      const resultsArrayList = titleArray.filter((title) => {
+        return title.title.includes(inputValue);
+      });
+      const resultsTitleList = resultsArrayList.map((row) => {
+        return row.title;
+      });
+      setDropDownList(resultsTitleList);
     } else {
       setHasInputValue(false);
       setDropDownList([]);
@@ -81,7 +86,7 @@ const ShowRelatedMovie = () => {
           value={inputValue}
           onChange={checkInputValue}
           onKeyUp={handleDropDownKey}
-          placeholder="관심 있는 장르는 무엇인가요?"
+          placeholder="영화의 제목을 입력해주세요."
         />
         <DeleteButton onClick={() => setInputValue("")}>&times;</DeleteButton>
       </InputBox>
@@ -159,6 +164,7 @@ const DropDownWrapper = styled.ul`
   top: 30px;
   left: 56.5%;
   width: 27.9%;
+  height: auto;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;

@@ -44,10 +44,9 @@ export const getSimilarMovie = async (movieId) => {
 };
 
 export const getSearchMovie = async (query) => {
-  const response = await instance.get("/search/movie", {
+  const response = await instance.get(`/search/movie?query=${query}`, {
     params: {
       api_key: API_KEY,
-      query: query,
     },
   });
   return response.data;
