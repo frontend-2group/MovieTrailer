@@ -82,14 +82,11 @@ https://www.figma.com/file/pGQXz9HbHI4KCgcIov0fz5/%5B-FrontendGroup2-%5D-MovieTr
     <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/c0bac63f-c59a-4b8e-835e-693433989f9b" width="40%">
     <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/fc24f39f-951b-4f0a-92ed-70970a237c09" width="40%">
 </p>
-<p align="center">검색 시 보이게 될 화면입니다.</p>
+<p align="center">검색 시 보이게 될 화면과 상세보기 버튼 클릭 시 보이게 될 영화의 상세 정보를 그려주는 화면입니다.</p>
 <p align="center">
     <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/e2fffae6-a776-4142-87fa-8430579d1634" width="40%">
-</p>
-<p align="center">상세보기 버튼 클릭 시 보이게 될 영화의 상세 정보를 그려주는 화면입니다.</p>
-<p align="center">
     <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/778568d6-ddee-43d3-9827-737aa222846f" width="40%">
-</>
+</p>
 
 ### preview MV
 

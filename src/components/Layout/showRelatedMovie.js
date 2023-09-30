@@ -21,7 +21,6 @@ const ShowRelatedMovie = () => {
   const showDropDownList = () => {
     // validation check
     const regExp = /[A-Za-z]+/gi;
-    console.log(inputValue.match(regExp));
 
     if (inputValue.match(regExp)) {
       const titleArray = movieData.results;
