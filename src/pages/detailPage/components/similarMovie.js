@@ -3,21 +3,14 @@ import { getSimilarMovie } from "../../../api";
 import styled from "styled-components";
 import HoverRevealComponents from "../../../components/hoverReveal";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect } from "react";
 
-const SimilarMovie = ({ movieId, movieDataRefetch, videoRefetch }) => {
+const SimilarMovie = ({ movieId }) => {
   const params = useParams();
   const navigate = useNavigate();
 
-  const { data, refetch } = useQuery(["similar"], () =>
+  const { data } = useQuery(["similar", movieId], () =>
     getSimilarMovie(movieId)
   );
-
-  useEffect(() => {
-    movieDataRefetch();
-    videoRefetch();
-    refetch();
-  });
 
   const similarArr = data && data.results;
 
@@ -32,10 +25,10 @@ const SimilarMovie = ({ movieId, movieDataRefetch, videoRefetch }) => {
   return (
     data && (
       <SimilarMovieWrapper>
-        {similarArr.map((movie, index) => (
+        {similarArr.map((movie) => (
           <HoverRevealComponents
             movie={movie}
-            key={index}
+            key={movie.id}
             onOpenDetailPage={onOpenDetailPage}
           />
         ))}

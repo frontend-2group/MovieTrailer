@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useInfiniteQuery } from "react-query";
 import { fetchMovies } from "../../../api";
@@ -16,21 +16,37 @@ const MovieList = () => {
     : (pramsKey = prams.movie);
 
   // 영화 목록 받아오기
-  const { data, isFetching } = useInfiniteQuery(
+  const { data, fetchNextPage, hasNextPage } = useInfiniteQuery(
     `${pramsKey}`,
     async ({ pageParam = 1 }) => {
       const response = await fetchMovies(
         `/movie/${pramsKey}?page=${pageParam}`
       );
-      return response.results;
+      return response.data;
     },
     {
-      getNextPageParam: (lastPage) =>
-        lastPage.page < lastPage.total_pages ? lastPage.page + 1 : undefined,
+      getNextPageParam: (lastPage) => {
+        const page = lastPage.page;
+        if (lastPage.total_pages === page) return false;
+        return page + 1;
+      },
     }
   );
-  // 영화 목록 배열
-  const movieList = data?.pages[0];
+  data && console.log(data);
+
+  // 스크롤 최하단 시 fetchNextPage실행
+  const handleScroll = () => {
+    const scrollHeight = document.documentElement.scrollHeight;
+    const scrollTop = document.documentElement.scrollTop;
+    const clientHeight = document.documentElement.clientHeight;
+    if (scrollTop + clientHeight >= scrollHeight) return fetchNextPage();
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
 
   // 상세 페이지 이동 함수
   const onOpenDetailPage = (movie) => {
@@ -43,14 +59,17 @@ const MovieList = () => {
   return (
     <MovieWrapper>
       <MovieGrid>
-        {movieList?.map((movie, index) => (
-          <HoverRevealComponents
-            movie={movie}
-            onOpenDetailPage={onOpenDetailPage}
-          />
-        ))}
+        {data?.pages.map((page) => {
+          const movieList = page.results;
+          return movieList.map((movie, index) => (
+            <HoverRevealComponents
+              key={index}
+              movie={movie}
+              onOpenDetailPage={onOpenDetailPage}
+            />
+          ));
+        })}
       </MovieGrid>
-      {isFetching && <p>Loading...</p>}
     </MovieWrapper>
   );
 };
