@@ -5,9 +5,7 @@ import { flexAlignCenter, flexCenter } from "../../../styles/common.style";
 import { useState } from "react";
 
 const Reviews = ({ movieId }) => {
-  // 디테일 페이지로 이동한 영화의 리뷰 내용입니다.
   const { data } = useQuery(["review"], () => getReviews(movieId));
-
   const [showReviews, setShowReviews] = useState(false);
 
   const onClickReviews = () => {
@@ -15,69 +13,73 @@ const Reviews = ({ movieId }) => {
   };
 
   return (
-    <DetailPageReviewWrapper>
-      <CenteredButtonWrapper>
-        <DetailPageReviewButton onClick={onClickReviews}>
-          Review
-        </DetailPageReviewButton>
-      </CenteredButtonWrapper>
+    <Wrapper>
+      <Center>
+        <Button onClick={onClickReviews}>Review</Button>
+      </Center>
       {showReviews && data && (
-        <UlContentWrapper>
+        <ReviewBox>
           {data.results.map((review) => (
-            <li key={review.id}>
-              <UserContentWrapper>
-                <UserProfile>user</UserProfile>
-                <UserNickName>
-                  <div> {review.author}</div>
-                  <div> {review.created_at}</div>
-                </UserNickName>
-              </UserContentWrapper>
+            <OneReview key={review.id}>
+              <UserInfo>
+                <Profile>user</Profile>
+                <UserNickName> {review.author}</UserNickName>
+                <Written> {review.created_at}</Written>
+              </UserInfo>
               <br />
-              <UserReview>{review.content}</UserReview>
-              {/* <hr /> */}
-            </li>
+              <Content>{review.content}</Content>
+            </OneReview>
           ))}
-        </UlContentWrapper>
+        </ReviewBox>
       )}
-    </DetailPageReviewWrapper>
+    </Wrapper>
   );
 };
 
 export default Reviews;
 
-const DetailPageReviewWrapper = styled.div`
+const Wrapper = styled.div`
   color: white;
 `;
 
-//review 버튼 가운데 정렬
-const CenteredButtonWrapper = styled.div`
+const Center = styled.div`
   ${flexCenter}
-  height: 250px;
 `;
 
-// review Click button
-const DetailPageReviewButton = styled.button`
-  color: ${({ theme }) => theme.COLORS.white};
-  background-color: ${({ theme }) => theme.COLORS.primary["hotPink"]};
+const Button = styled.button`
+  width: 160px;
+  height: 50px;
+  margin-bottom: 5%;
+  border-radius: 2px;
+  border: 1px solid ${({ theme }) => theme.COLORS.primary.hotPink};
+  color: ${({ theme }) => theme.COLORS.primary.hotPink};
+  background-color: ${({ theme }) => theme.COLORS.black};
   font-size: ${({ theme }) => theme.FONT_SIZE.medium};
-  border: none;
-  border-radius: 50%;
   cursor: pointer;
-  width: 100px;
-  height: 100px;
+  transition: all 0.3s;
+
+  &:hover {
+    color: ${({ theme }) => theme.COLORS.white};
+    background-color: ${({ theme }) => theme.COLORS.primary.hotPink};
+  }
 `;
-// review 전체 감싸고 있는 ul 박스
-const UlContentWrapper = styled.ul`
-  border-top: 1px solid #ff0458;
+
+const ReviewBox = styled.ul`
+  height: fit-content;
+  min-height: 100px;
+  border: 1px solid ${({ theme }) => theme.COLORS.primary.hotPink};
+  border-radius: 10px;
+  padding: 2%;
+  margin-bottom: 8%;
+  transition: height 0.3s;
 `;
-//reviewli감싸고 있는 박스
-const UserContentWrapper = styled.div`
+const OneReview = styled.li``;
+
+const UserInfo = styled.div`
   ${flexAlignCenter}
   padding-top: 20px;
 `;
-
-//Profile
-const UserProfile = styled.button`
+const Profile = styled.button`
   background-color: #ccc;
   border: none;
   border-radius: 50%;
@@ -85,22 +87,23 @@ const UserProfile = styled.button`
   width: 40px;
   height: 40px;
 `;
-
-//nickName
-const UserNickName = styled.span`
+const UserNickName = styled.div`
   margin-left: 10px;
-  display: block;
   font-size: ${({ theme }) => theme.FONT_SIZE.medium};
   font-weight: ${({ theme }) => theme.FONT_WEIGHT.regular};
+
   & > div:nth-child(2) {
     font-size: 14px;
     line-height: 20px;
   }
 `;
-
-//review
-const UserReview = styled.div`
+const Written = styled.span`
+  font-size: 14px;
+  color: #999;
+  margin-left: 65%;
+`;
+const Content = styled.div`
   padding-bottom: 30px;
   line-height: 20px;
-  border-bottom: 1px solid #ff0458;
+  padding: 2%;
 `;

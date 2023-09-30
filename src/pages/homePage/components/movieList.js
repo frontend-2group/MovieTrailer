@@ -16,7 +16,7 @@ const MovieList = () => {
     : (pramsKey = prams.movie);
 
   // 영화 목록 받아오기
-  const { data, fetchNextPage, hasNextPage } = useInfiniteQuery(
+  const { data, fetchNextPage } = useInfiniteQuery(
     `${pramsKey}`,
     async ({ pageParam = 1 }) => {
       const response = await fetchMovies(

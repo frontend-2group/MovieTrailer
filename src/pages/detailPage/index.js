@@ -27,7 +27,7 @@ const DetailPage = () => {
             allowFullScreen
           ></DetailMovieVideo>
         )}
-        <TextBox>
+        <MovieInfo>
           <MovieStar>★{Math.round(movieData.vote_average)}</MovieStar>
           <MovieTitle>{movieData.title}</MovieTitle>
           <ReleaseDate>release {movieData.release_date}</ReleaseDate>
@@ -35,13 +35,12 @@ const DetailPage = () => {
             <MovieAOnelineExplain>{movieData.tagline}</MovieAOnelineExplain>
             <MovieExplain>{movieData.overview}</MovieExplain>
           </TextWrap>
-        </TextBox>
-        <SimiliarMovieBox>
-          <SimiliarMovieBoxMent>이 영화와 비슷해요!</SimiliarMovieBoxMent>
-          <SimilarMovie movieId={movieId} />
-        </SimiliarMovieBox>
-        {/* 리뷰컴포넌트 */}
+        </MovieInfo>
         <Reviews movieId={movieId} />
+        <Recommend>
+          <Text>이 영화와 비슷해요!</Text>
+          <SimilarMovie movieId={movieId} />
+        </Recommend>
       </DetailPageWrapper>
     )
   );
@@ -49,28 +48,27 @@ const DetailPage = () => {
 
 export default DetailPage;
 
-// 전체
 const DetailPageWrapper = styled.div`
   width: 1280px;
   height: auto;
   margin: 0 auto;
 `;
 
-// 비디오
 const DetailMovieVideo = styled.iframe`
   width: 1280px;
   height: 700px;
   margin-top: 52px;
 `;
 
-const MovieStar = styled.span`
-  color: ${({ theme }) => theme.COLORS.primary["hotPink"]};
-  font-size: ${({ theme }) => theme.FONT_SIZE.movie};
-`;
-
-const TextBox = styled.div`
+const MovieInfo = styled.div`
   padding-left: 30px;
   color: white;
+`;
+
+const MovieStar = styled.div`
+  padding-top: 5%;
+  color: ${({ theme }) => theme.COLORS.primary.hotPink};
+  font-size: ${({ theme }) => theme.FONT_SIZE.movie};
 `;
 
 const TextWrap = styled.div`
@@ -87,26 +85,27 @@ const ReleaseDate = styled.div`
   font-weight: 100;
   font-size: 24px;
   margin-right: 50px;
-  color: ${({ theme }) => theme.COLORS.primary["gray"]};
+  color: ${({ theme }) => theme.COLORS.primary.gray};
 `;
 
 const MovieAOnelineExplain = styled.div`
   font-weight: 400;
-  font-size: 35px;
+  font-size: 32px;
   padding-top: 80px;
   padding-bottom: 60px;
 `;
 
 const MovieExplain = styled.div`
+  width: 1200px;
   font-weight: 300;
   font-size: 28px;
+  line-height: 160%;
   word-wrap: break-word;
   padding-bottom: 150px;
 `;
 
-const SimiliarMovieBox = styled.div``;
-
-const SimiliarMovieBoxMent = styled.p`
+const Recommend = styled.div``;
+const Text = styled.p`
   color: ${({ theme }) => theme.COLORS.primary["hotPink"]};
   padding-left: 30px;
   font-size: 28px;

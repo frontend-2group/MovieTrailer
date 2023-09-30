@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { flexAlignCenter } from "../../styles/common.style";
 import { useNavigate } from "react-router-dom";
 import { MOVIE_QUERY_KEY } from "../../consts/movieQueryKey";
-import ShowRelatedMovie from "./showRelatedMovie";
+import SearchBox from "./searchBox";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -41,7 +41,7 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <Logo onClick={onClickMainHomePage}>
-        <img src="/images/logo.png" alt="로고" />
+        <img src="/images/logo.png" alt="Catcha Logo" />
       </Logo>
       <FilterBar>
         <Standard onClick={onOpenUpcomingMovieList}>개봉 예정</Standard>
@@ -49,7 +49,7 @@ const Header = () => {
         <Standard onClick={onOpenTopRatedMovieList}>높은 평점</Standard>
         <Standard onClick={onOpenNowPlayingMovieList}>상영 중</Standard>
       </FilterBar>
-      <ShowRelatedMovie />
+      <SearchBox />
       <UserProfile>user</UserProfile>
     </HeaderWrapper>
   );
