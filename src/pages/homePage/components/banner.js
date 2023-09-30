@@ -1,10 +1,8 @@
 import styled from "styled-components";
 import { useQuery } from "react-query";
-import { useParams } from "react-router-dom";
 import { getMovieVideo } from "../../../api";
 
 const Banner = () => {
-  const params = useParams();
   const { data: videoData } = useQuery(["video"], () => getMovieVideo(762430));
 
   return (
@@ -15,6 +13,7 @@ const Banner = () => {
             src={`https://www.youtube.com/embed/${videoData.results[0].key}?autoplay=1&mute=1`}
             frameBorder="0"
             allowFullScreen
+            autoplay
           />
         )}
       </ShowContent>
