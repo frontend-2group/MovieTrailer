@@ -2,7 +2,7 @@ const COLORS = {
   primary: {
     hotPink: "#FF0458",
     salmon: "#FFCDCD",
-    oil: "#434343",
+    darkGray: "#434343",
     gray: "#D9D9D9",
   },
   error: "#FF0000",
