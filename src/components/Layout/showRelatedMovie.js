@@ -5,22 +5,22 @@ import { useEffect, useState } from "react";
 import { flexCenter } from "../../styles/common.style";
 import { useQuery } from "react-query";
 import { getSearchMovie } from "../../api";
+import { useNavigate } from "react-router-dom";
 
 const ShowRelatedMovie = () => {
-  const { data: movieData } = useQuery(["searchKeyword"], () =>
-    getSearchMovie(`${inputValue}`)
-  );
-
+  /*   
   const [inputValue, setInputValue] = useState("");
   const [hasInputValue, setHasInputValue] = useState(false);
   const [dropDownList, setDropDownList] = useState();
   const [dropDownMovieIndex, setDropDownMovieIndex] = useState(-1);
+
 
   // show related movieList
   // filter movies which includes(contains) inputValue
   const showDropDownList = () => {
     // validation check
     const regExp = /[A-Za-z]+/gi;
+    console.log(inputValue.match(regExp));
 
     if (inputValue.match(regExp)) {
       const titleArray = movieData.results;
@@ -36,7 +36,7 @@ const ShowRelatedMovie = () => {
       setDropDownList([]);
     }
   };
-
+  
   const checkInputValue = (e) => {
     e.preventDefault();
     setInputValue(e.target.value);
@@ -73,7 +73,7 @@ const ShowRelatedMovie = () => {
 
   return (
     <Wrapper>
-      <InputBox hasInputValue={hasInputValue}>
+      <Form hasInputValue={hasInputValue} onSubmit={onOpenSearchPage}>
         <SearchIcon>
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
@@ -88,7 +88,7 @@ const ShowRelatedMovie = () => {
           placeholder="영화의 제목을 입력해주세요."
         />
         <DeleteButton onClick={() => setInputValue("")}>&times;</DeleteButton>
-      </InputBox>
+      </Form>
       {hasInputValue && (
         <DropDownWrapper>
           {dropDownList.length === 0 && (
@@ -111,6 +111,23 @@ const ShowRelatedMovie = () => {
         </DropDownWrapper>
       )}
     </Wrapper>
+  ); */
+  const navigate = useNavigate();
+
+  const onOpenSearchPage = (e) => {
+    e.preventDefault();
+    const inputValue = e.target.inputValue.value;
+    console.log(inputValue);
+    navigate(`/searchPage/:${inputValue}`);
+    window.scroll({
+      top: 0,
+    });
+  };
+
+  return (
+    <form onSubmit={onOpenSearchPage}>
+      <input type="text" name="inputValue" />
+    </form>
   );
 };
 
@@ -124,7 +141,7 @@ const Wrapper = styled.div`
 `;
 
 // input box
-const InputBox = styled.div`
+const Form = styled.form`
   position: absolute;
   left: 55%;
   transform: translateY(-50%);

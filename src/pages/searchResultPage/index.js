@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { flexCenter } from "../../styles/common.style";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getSearchMovie } from "../../api";
 
@@ -10,25 +10,35 @@ const SearchResultPage = () => {
     navigate("/detailPage");
   };
 
-  const { data } = useQuery(["qqqqq"], () => getSearchMovie("Avengers"));
+  const params = useParams();
+  const paramKeyword = params.keyWord.replace(":", "");
+
+  const { data } = useQuery(["qqqqq"], () => getSearchMovie(paramKeyword));
   data && console.log(data);
 
   return (
     <>
-      <SearchPageWapper>
-        <SearchImageBox>
-          <img src="/images/testimg.jpeg" alt="text" />
-        </SearchImageBox>
-        <SearchTextBox>
-          <h1>영화 제목</h1>
-          <hr />
-          <p>release 2023.00.00</p>
-          <p>영화 설명 요약 영화 설명 요약 영화 설명 요약 영화 설명 요약 ...</p>
-          <SearchButtonBox onClick={onClickDetailPage}>
-            상세보기
-          </SearchButtonBox>
-        </SearchTextBox>
-      </SearchPageWapper>
+      {data?.results.map((movie) => (
+        <SearchPageWapper>
+          <SearchImageBox>
+            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
+          </SearchImageBox>
+          <SearchTextBox>
+            <h1>{movie.title}</h1>
+            <hr />
+            <p>{movie.release_date}</p>
+            <p>{movie.overview}</p>
+            <SearchButtonBox
+              onClick={() => {
+                navigate(`/movie/:${movie.id}`);
+              }}
+            >
+              상세보기
+            </SearchButtonBox>
+          </SearchTextBox>
+        </SearchPageWapper>
+      ))}
+      <div>{data?.results[0].title}</div>
     </>
   );
 };
