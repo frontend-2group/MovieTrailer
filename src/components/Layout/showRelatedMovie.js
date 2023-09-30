@@ -8,7 +8,7 @@ import { getSearchMovie } from "../../api";
 
 const ShowRelatedMovie = () => {
   const { data: movieData } = useQuery(["searchKeyword"], () =>
-    getSearchMovie(inputValue)
+    getSearchMovie(`${inputValue}`)
   );
 
   const [inputValue, setInputValue] = useState("");
@@ -138,11 +138,17 @@ const SearchIcon = styled.div``;
 const Input = styled.input`
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  outline: none;
+  border: none;
   border-radius: 20px;
   margin: 0 10px;
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0px 2px 7px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s;
+  &:focus {
+    background-color: ${({ theme }) => theme.COLORS.white};
+  }
 `;
 const DeleteButton = styled.button`
   position: absolute;
@@ -151,10 +157,11 @@ const DeleteButton = styled.button`
   height: 20px;
   text-align: center;
   border-radius: 50%;
-  background-color: #fff;
+  background: none;
   cursor: pointer;
+  transition: all 0.5s;
   &:hover {
-    background-color: #d9d9d9;
+    background-color: ${({ theme }) => theme.COLORS.white};
   }
 `;
 
