@@ -13,7 +13,7 @@ export const fetchMovies = async (endpoint) => {
       api_key: API_KEY,
     },
   });
-  return response.data;
+  return response;
 };
 
 export const getDetailMoviePage = async (movieId) => {

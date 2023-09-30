@@ -8,19 +8,34 @@ const Header = () => {
   const navigate = useNavigate();
   const onClickMainHomePage = () => {
     navigate("/");
+    window.scroll({
+      top: 0,
+    });
   };
 
   const onOpenUpcomingMovieList = () => {
     navigate(MOVIE_QUERY_KEY.UPCOMING);
+    window.scroll({
+      top: 0,
+    });
   };
   const onOpenPopularMovieList = () => {
     navigate(MOVIE_QUERY_KEY.POPULAR);
+    window.scroll({
+      top: 0,
+    });
   };
   const onOpenTopRatedMovieList = () => {
     navigate(MOVIE_QUERY_KEY.TOP_RATED);
+    window.scroll({
+      top: 0,
+    });
   };
   const onOpenNowPlayingMovieList = () => {
     navigate(MOVIE_QUERY_KEY.NOW_PLAYING);
+    window.scroll({
+      top: 0,
+    });
   };
 
   return (
