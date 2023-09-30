@@ -4,16 +4,17 @@
 
 ### develop date
 
-2023.09.24 ~ 2023.09.00
+2023.09.24 ~ 2023.09.31
 | 날짜(월/일) | 개발 내용 |
 | ----------- | --------------------------------------------------------------------------------------------- |
 | 09/24 | 디자인 작업 진행, 폴더 구조 계획 |
 | 09/25 | 문서 구조에 맞게 route 설정, header & footer, scrollTop 기능 구현, 공용 CSS 파일 생성 |
-| 09/26 | 영화 목록 필더링 (header filterBar)기능 구현, 검색 기능을 통해 원하는 키워드가 포함된 영화 찾기 기능 구현, 디자인 추가 |
+| 09/26 | 영화 목록 필더링 (header filterBar)기능 구현, 검색 기능 로직 구현, 디자인 추가 |
 | 09/27 | detail page 구현, hoverEffect 컴포넌트화하기, git commit 내역 얽힌 부분 해결 (pull issue) |
-| 09/28 | skeleton UI, error boundary, detail page review 보기 만들기, 배너 디자인 |
-| 09/29 | 무한 스크롤 구현, 코드 정리(중복된 코드 유무 확인 및 css 정리) |
-| 09/30 | 배포, README.md 정리, 회고 |
+| 09/28 | detail page review 보기 만들기, 배너 디자인 |
+| 09/29 | 무한 스크롤 구현, 검색 기능을 통해 원하는 키워드가 포함된 영화 찾기 기능 구현 |
+| 09/30 | 무한 스크롤 구현, skeleton UI, error boundary, 코드 정리(중복된 코드 유무 확인 및 css 정리) |
+| 09/31 | 배포, README.md 정리, 회고 |
 
 ### developers
 
@@ -24,7 +25,7 @@
 Environment
 <img src="https://img.shields.io/badge/GitHub-000000?style=flat-square&logo=github&logoColor=white">
 <img src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC.svg?&style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white">
-<img src="https://img.shields.io/badge/figma-F24E1E?style=flat-square&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/figma-F24E1E?style=flat-square&logo=figma&logoColor=white">
 
 Config
 <img src="https://img.shields.io/badge/NPM-CB3837?style=flat-square&logo=npm&logoColor=white">
@@ -37,7 +38,7 @@ Development
 
 Communication
 <img src="https://img.shields.io/badge/GitHub-000000?style=flat-square&logo=github&logoColor=white">
-<img src="https://img.shields.io/badge/discord-5865F2?style=flat-square&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/discord-5865F2?style=flat-square&logo=discord&logoColor=white">
 
 ### GitHub Convention
 
@@ -63,6 +64,7 @@ Communication
 
 ### figma link
 
+디테일한 디자인은 아래 피그마 링크에서 확인 가능합니다.
 https://www.figma.com/file/pGQXz9HbHI4KCgcIov0fz5/%5B-FrontendGroup2-%5D-MovieTrailer?type=design&node-id=1669%3A162202&mode=design&t=TnpVgFm46yy8Bibl-1
 
 ### wire frame
@@ -70,25 +72,24 @@ https://www.figma.com/file/pGQXz9HbHI4KCgcIov0fz5/%5B-FrontendGroup2-%5D-MovieTr
 <p align="center">
     <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/b5549d84-94e5-407f-9845-c7be58443b4f" width="30%">
     <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/e7f58594-17f2-4a28-9fd7-4ec6d1f58220" width="30%">
-    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/8b29e9e3-4af9-4172-aa28-1298687a3406" width="30%">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/a7189856-9aac-4a62-8141-c8c09fd61b1c" width="30%">
 </p>
 
 ### design
 
 <p align="center">왼쪽은 메인 페이지입니다. 왼쪽은 cursor :hover,  :focus 시 변하게 될 css가 적용된 메인 페이지 입니다.</p>
 <p align="center">
-    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/fdbecaca-1ff6-45a8-a913-ef72bdf8129e" width="40%">
-    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/9aad4901-cb62-4054-a291-a83544fdf1c8" width="40%">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/c0bac63f-c59a-4b8e-835e-693433989f9b" width="40%">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/fc24f39f-951b-4f0a-92ed-70970a237c09" width="40%">
 </p>
-<p align="center">검색 시 보이게 될 화면입니다.</p>
+<p align="center">검색 시 보이게 될 화면과 상세보기 버튼 클릭 시 보이게 될 영화의 상세 정보를 그려주는 화면입니다.</p>
 <p align="center">
-    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/05d0cd8a-706c-4154-a4df-25b1cf872415" width="40%">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/e2fffae6-a776-4142-87fa-8430579d1634" width="40%">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/778568d6-ddee-43d3-9827-737aa222846f" width="40%">
 </p>
-<p align="center">상세보기 버튼 클릭 시 보이게 될 영화의 상세 정보를 그려주는 화면입니다.</p>
-<p align="center">
-    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/9d8102de-13bf-4445-9b2f-84e05f5dffeb" width="40%">
-</>
 
 ### preview MV
 
 ### deploy
+
+배포 주소 :
