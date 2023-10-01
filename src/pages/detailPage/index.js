@@ -104,7 +104,11 @@ const MovieExplain = styled.div`
   padding-bottom: 150px;
 `;
 
-const Recommend = styled.div``;
+const Recommend = styled.div`
+  position: relative;
+  left: 55%;
+  transform: translateX(-50%);
+`;
 const Text = styled.p`
   color: ${({ theme }) => theme.COLORS.primary["hotPink"]};
   padding-left: 30px;

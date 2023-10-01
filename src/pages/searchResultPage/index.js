@@ -21,7 +21,14 @@ const SearchResultPage = () => {
       {data?.results.map((movie) => (
         <OneMovie>
           <MoviePoster>
-            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
+            {data !== null ? (
+              <img
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                alt="movie poster"
+              />
+            ) : (
+              <img src={"../images/noPoster.png"} alt="no poster" />
+            )}
           </MoviePoster>
           <MovieInfo>
             <Title>{movie.title}</Title>
@@ -45,9 +52,9 @@ export default SearchResultPage;
 
 const Text = styled.h2`
   position: absolute;
-  top: 15%;
+  top: 1%;
   left: 10%;
-  color: #fff;
+  color: ${({ theme }) => theme.COLORS.white};
 `;
 
 const Wrapper = styled.div`
