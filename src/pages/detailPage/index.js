@@ -110,7 +110,7 @@ const Recommend = styled.div`
   transform: translateX(-50%);
 `;
 const Text = styled.p`
-  color: ${({ theme }) => theme.COLORS.primary["hotPink"]};
+  color: ${({ theme }) => theme.COLORS.primary.hotPink};
   padding-left: 30px;
   font-size: 28px;
   padding-bottom: 30px;
