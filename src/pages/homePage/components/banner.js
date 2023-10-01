@@ -23,10 +23,10 @@ const Banner = () => {
 export default Banner;
 
 const Wrapper = styled.div`
-  position: absolute;
+  position: relative;
   top: 0;
   width: 100%;
-  height: 800px;
+  height: 900px;
   opacity: 0.5;
   overflow: hidden;
 `;

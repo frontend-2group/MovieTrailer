@@ -6,6 +6,7 @@ import GlobalStyles from "./styles/global.style";
 import ScrollTop from "./components/scrollTop";
 import { RouterProvider } from "react-router-dom";
 import router from "./route/route";
+import { ChakraProvider } from "@chakra-ui/react";
 
 // 아래 두 코드 터미널에 입력해서 설치해주세요
 // npm install react-query --force
@@ -16,9 +17,11 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
-        <RouterProvider router={router} />
-        <GlobalStyles />
-        <ScrollTop />
+        <ChakraProvider theme={theme}>
+          <RouterProvider router={router} />
+          <GlobalStyles />
+          <ScrollTop />
+        </ChakraProvider>
       </ThemeProvider>
     </QueryClientProvider>
   );
