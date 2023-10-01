@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Skeleton } from "@chakra-ui/react";
 
-const HoverRevealComponents = ({ movie, onOpenDetailPage }) => {
+const HoverRevealComponents = ({ movie, onOpenDetailPage, isFetching }) => {
   const MAX_TITLE_LENGTH = 20;
   const MAX_OVERVIEW_LENGTH = 80;
 
@@ -18,17 +19,25 @@ const HoverRevealComponents = ({ movie, onOpenDetailPage }) => {
   };
 
   return (
-    <MovieTrailer key={movie.id}>
-      <Poster src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
-      <HoverReveal onClick={() => onOpenDetailPage(movie)}>
-        <Rate>
-          <span>★</span>
-          <span>{Math.round(movie.vote_average)}</span>
-        </Rate>
-        <Title> {skipTitleView(movie.title)}</Title>
-        <Content> {skipOverView(movie.overview)}</Content>
-      </HoverReveal>
-    </MovieTrailer>
+    <Skeleton
+      isLoaded={!isFetching}
+      startColor="#FFCDCD"
+      endColor="#C49D9D"
+      width="212px"
+      height="282px"
+    >
+      <MovieTrailer key={movie.id}>
+        <Poster src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
+        <HoverReveal onClick={() => onOpenDetailPage(movie)}>
+          <Rate>
+            <span>★</span>
+            <span>{Math.round(movie.vote_average)}</span>
+          </Rate>
+          <Title> {skipTitleView(movie.title)}</Title>
+          <Content> {skipOverView(movie.overview)}</Content>
+        </HoverReveal>
+      </MovieTrailer>
+    </Skeleton>
   );
 };
 export default HoverRevealComponents;
@@ -45,8 +54,8 @@ const Poster = styled.img`
 `;
 
 const HoverReveal = styled.div`
-  width: 220px;
-  height: 290px;
+  width: 212px;
+  height: 282px;
   padding: 30px;
   line-height: 20px;
   color: ${({ theme }) => theme.COLORS.white};

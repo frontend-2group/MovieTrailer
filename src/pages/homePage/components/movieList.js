@@ -16,7 +16,7 @@ const MovieList = () => {
     : (pramsKey = prams.movie);
 
   // 영화 목록 받아오기
-  const { data, fetchNextPage } = useInfiniteQuery(
+  const { data, fetchNextPage, isFetching } = useInfiniteQuery(
     `${pramsKey}`,
     async ({ pageParam = 1 }) => {
       const response = await fetchMovies(
@@ -66,6 +66,7 @@ const MovieList = () => {
               key={index}
               movie={movie}
               onOpenDetailPage={onOpenDetailPage}
+              isFetching={isFetching}
             />
           ));
         })}
@@ -77,7 +78,7 @@ const MovieList = () => {
 export default MovieList;
 
 const MovieWrapper = styled.div`
-  margin-top: 900px;
+  margin-top: 200px;
   display: flex;
   justify-content: center;
 `;
