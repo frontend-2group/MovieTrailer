@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import styled from "styled-components";
 import { flexAlignCenter } from "../../styles/common.style";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +7,8 @@ import SearchBox from "./searchBox";
 
 const Header = () => {
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState(MOVIE_QUERY_KEY.POPULAR);
+
   const onClickMainHomePage = () => {
     navigate("/");
     window.scroll({
@@ -13,29 +16,12 @@ const Header = () => {
     });
   };
 
-  const onOpenUpcomingMovieList = () => {
-    navigate(MOVIE_QUERY_KEY.UPCOMING);
+  const onOpenTab = (tabKey) => {
+    navigate(tabKey);
     window.scroll({
       top: 0,
     });
-  };
-  const onOpenPopularMovieList = () => {
-    navigate(MOVIE_QUERY_KEY.POPULAR);
-    window.scroll({
-      top: 0,
-    });
-  };
-  const onOpenTopRatedMovieList = () => {
-    navigate(MOVIE_QUERY_KEY.TOP_RATED);
-    window.scroll({
-      top: 0,
-    });
-  };
-  const onOpenNowPlayingMovieList = () => {
-    navigate(MOVIE_QUERY_KEY.NOW_PLAYING);
-    window.scroll({
-      top: 0,
-    });
+    setActiveTab(tabKey);
   };
 
   return (
@@ -44,10 +30,30 @@ const Header = () => {
         <img src="/images/logo.png" alt="Catcha Logo" />
       </Logo>
       <FilterBar>
-        <Standard onClick={onOpenUpcomingMovieList}>개봉 예정</Standard>
-        <Standard onClick={onOpenPopularMovieList}>인기 작품</Standard>
-        <Standard onClick={onOpenTopRatedMovieList}>높은 평점</Standard>
-        <Standard onClick={onOpenNowPlayingMovieList}>상영 중</Standard>
+        <Standard
+          onClick={() => onOpenTab(MOVIE_QUERY_KEY.UPCOMING)}
+          active={activeTab === MOVIE_QUERY_KEY.UPCOMING}
+        >
+          개봉 예정
+        </Standard>
+        <Standard
+          onClick={() => onOpenTab(MOVIE_QUERY_KEY.POPULAR)}
+          active={activeTab === MOVIE_QUERY_KEY.POPULAR}
+        >
+          인기 작품
+        </Standard>
+        <Standard
+          onClick={() => onOpenTab(MOVIE_QUERY_KEY.TOP_RATED)}
+          active={activeTab === MOVIE_QUERY_KEY.TOP_RATED}
+        >
+          높은 평점
+        </Standard>
+        <Standard
+          onClick={() => onOpenTab(MOVIE_QUERY_KEY.NOW_PLAYING)}
+          active={activeTab === MOVIE_QUERY_KEY.NOW_PLAYING}
+        >
+          상영 중
+        </Standard>
       </FilterBar>
       <SearchBox />
       <UserProfile>user</UserProfile>
@@ -87,7 +93,8 @@ const FilterBar = styled.ul`
 
 const Standard = styled.li`
   cursor: pointer;
-  color: #fff;
+  color: ${(props) => (props.active ? "#ff0458" : "#fff")};
+  font-weight: ${(props) => (props.active ? "bold" : "normal")};
 
   &:hover {
     font-weight: bold;
@@ -95,8 +102,6 @@ const Standard = styled.li`
   }
 `;
 
-// UserInfo.
-// 로그인/로그아웃 로직 구현 시 활용할 수 있는 회원 프로필
 const UserProfile = styled.button`
   background-color: #ccc;
   border: none;
