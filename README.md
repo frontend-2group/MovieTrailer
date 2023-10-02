@@ -94,11 +94,13 @@ https://www.figma.com/file/pGQXz9HbHI4KCgcIov0fz5/%5B-FrontendGroup2-%5D-MovieTr
 <p align="center">실제로 구현한 영화 트레일러 사이트 시연 영상입니다.</p>
 <p align="center">메인 화면에서 보여지는 영화 목록들은 무한 스크롤로 보여지는 형식이며 오른쪽 하단 scroll top 아이콘을 누르면 최상단으로 돌아갑니다.</p>
 <p align="center">
-    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/7ac40654-adb1-4712-b837-a8414f28cfdb" width="80%">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/b979ddb6-6f47-4573-9888-c03c85c4f1e5" width="80%">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/7b887ebb-f2e5-4376-8619-dd93b62698ca" width="80%">
 </p>
 <p align="center">검색 창에 키워드를 입력하면 키워드가 포함된 영화 목록을 보여줍니다. 더 자세히 보고 싶은 영화를 클릭하면 관련 영화의 정보와 댓글, 그리고 비슷한 영화를 추천받을 수 있습니다.</p>
 <p align="center">
-    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/a87520a4-6e94-4f90-882c-8bd5a1924ff4" width="80%">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/7d50fb86-0820-4af8-9e28-197a30656468" width="80%">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/91fe8506-dcfa-4bf4-ac40-3c9c76544c22" width="80%">
 </p>
 
 ### deploy
