@@ -3,12 +3,13 @@ import { getSimilarMovie } from "../../../api";
 import styled from "styled-components";
 import HoverRevealComponents from "../../../components/hoverReveal";
 import { useNavigate, useParams } from "react-router-dom";
+import { MOVIE_QUERY_KEY } from "../../../consts/movieQueryKey";
 
 const SimilarMovie = ({ movieId }) => {
   const params = useParams();
   const navigate = useNavigate();
 
-  const { data } = useQuery(["similar", movieId], () =>
+  const { data } = useQuery([MOVIE_QUERY_KEY.SIMILAR_MOVIE, movieId], () =>
     getSimilarMovie(movieId)
   );
 

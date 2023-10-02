@@ -3,9 +3,12 @@ import { getReviews } from "../../../api";
 import { styled } from "styled-components";
 import { flexAlignCenter, flexCenter } from "../../../styles/common.style";
 import { useState } from "react";
+import { MOVIE_QUERY_KEY } from "../../../consts/movieQueryKey";
 
 const Reviews = ({ movieId }) => {
-  const { data } = useQuery(["review"], () => getReviews(movieId));
+  const { data } = useQuery([MOVIE_QUERY_KEY.REVIEWS], () =>
+    getReviews(movieId)
+  );
   const [showReviews, setShowReviews] = useState(false);
 
   const onClickReviews = () => {

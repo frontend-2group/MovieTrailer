@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import { useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getSearchMovie } from "../../api";
+import { MOVIE_QUERY_KEY } from "../../consts/movieQueryKey";
 
 const SearchResultPage = () => {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ const SearchResultPage = () => {
   const params = useParams();
   const paramKeyword = params.keyWord.replace(":", "");
 
-  const { data } = useQuery(["containKeyword"], () =>
+  const { data } = useQuery([MOVIE_QUERY_KEY.CONTAIN_KEYWORD], () =>
     getSearchMovie(paramKeyword)
   );
 
