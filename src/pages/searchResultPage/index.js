@@ -13,6 +13,7 @@ const SearchResultPage = () => {
   const { data } = useQuery([MOVIE_QUERY_KEY.CONTAIN_KEYWORD], () =>
     getSearchMovie(paramKeyword)
   );
+  data && console.log(data);
 
   return (
     <Wrapper>
@@ -22,13 +23,13 @@ const SearchResultPage = () => {
       {data?.results.map((movie) => (
         <OneMovie>
           <MoviePoster>
-            {data !== null ? (
+            {movie.poster_path == null ? (
+              <img src="/images/noPoster.png" alt="no poster" />
+            ) : (
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt="movie poster"
               />
-            ) : (
-              <img src={"../images/noPoster.png"} alt="no poster" />
             )}
           </MoviePoster>
           <MovieInfo>

@@ -32,7 +32,6 @@ const MovieList = () => {
       },
     }
   );
-  data && console.log(data);
 
   // 스크롤 최하단 시 fetchNextPage실행
   const handleScroll = () => {
