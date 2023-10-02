@@ -5,16 +5,19 @@ import styled from "styled-components";
 import { DetailMovieTitle } from "../../styles/common.style";
 import SimilarMovie from "./components/similarMovie";
 import Reviews from "./components/reviews";
+import { MOVIE_QUERY_KEY } from "../../consts/movieQueryKey";
 
 const DetailPage = () => {
   const params = useParams();
   const movieId = params.movieId.replace(":", "");
 
-  const { data: movieData } = useQuery(["detailMovie", movieId], () =>
-    getDetailMoviePage(movieId)
+  const { data: movieData } = useQuery(
+    [MOVIE_QUERY_KEY.DETAIL_MOVIE, movieId],
+    () => getDetailMoviePage(movieId)
   );
-  const { data: videoData } = useQuery(["video", movieId], () =>
-    getMovieVideo(movieId)
+  const { data: videoData } = useQuery(
+    [MOVIE_QUERY_KEY.DETAIL_VIDEO, movieId],
+    () => getMovieVideo(movieId)
   );
 
   return (
@@ -27,7 +30,7 @@ const DetailPage = () => {
             allowFullScreen
           ></DetailMovieVideo>
         )}
-        <MovieInfo>
+        <MovieInfo key={movieData.id}>
           <MovieStar>★{Math.round(movieData.vote_average)}</MovieStar>
           <MovieTitle>{movieData.title}</MovieTitle>
           <ReleaseDate>release {movieData.release_date}</ReleaseDate>

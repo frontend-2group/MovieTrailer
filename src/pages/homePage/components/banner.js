@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import { useQuery } from "react-query";
 import { getMovieVideo } from "../../../api";
+import { MOVIE_QUERY_KEY } from "../../../consts/movieQueryKey";
 
 const Banner = () => {
-  const { data: videoData } = useQuery(["video"], () => getMovieVideo(762430));
+  const { data: videoData } = useQuery([MOVIE_QUERY_KEY.BANNER_VIDEO], () =>
+    getMovieVideo(762430)
+  );
 
   return (
     <Wrapper>
