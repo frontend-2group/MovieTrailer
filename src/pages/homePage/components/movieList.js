@@ -29,7 +29,6 @@ const MovieList = () => {
           ))}
         </MovieGrid>
       ))}
-      {isFetching && <p>Loading...</p>}
     </MovieWrapper>
   );
 };
