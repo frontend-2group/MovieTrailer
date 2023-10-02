@@ -60,19 +60,19 @@ Communication
 ### folder structure
 
 <p align="center">
-    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/66987396-9312-4314-96a3-4266728f9cf9" width="50%">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/60c68259-c44b-4215-8c6b-95238fdd40b7" width="50%">
 </p>
 
 ### figma link
 
-디테일한 디자인은 아래 피그마 링크에서 확인 가능합니다.
+디테일한 디자인은 아래 피그마 링크에서 확인 가능합니다 :
 https://www.figma.com/file/pGQXz9HbHI4KCgcIov0fz5/%5B-FrontendGroup2-%5D-MovieTrailer?type=design&node-id=1669%3A162202&mode=design&t=TnpVgFm46yy8Bibl-1
 
 ### wire frame
 
 <p align="center">
-    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/b5549d84-94e5-407f-9845-c7be58443b4f" width="30%">
     <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/e7f58594-17f2-4a28-9fd7-4ec6d1f58220" width="30%">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/b5549d84-94e5-407f-9845-c7be58443b4f" width="30%">
     <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/a7189856-9aac-4a62-8141-c8c09fd61b1c" width="30%">
 </p>
 
@@ -91,6 +91,16 @@ https://www.figma.com/file/pGQXz9HbHI4KCgcIov0fz5/%5B-FrontendGroup2-%5D-MovieTr
 
 ### preview MV
 
+<p align="center">실제로 구현한 영화 트레일러 사이트 시연 영상입니다.</p>
+<p align="center">메인 화면에서 보여지는 영화 목록들은 무한 스크롤로 보여지는 형식이며 오른쪽 하단 scroll top 아이콘을 누르면 최상단으로 돌아갑니다.</p>
+<p align="center">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/7ac40654-adb1-4712-b837-a8414f28cfdb" width="80%">
+</p>
+<p align="center">검색 창에 키워드를 입력하면 키워드가 포함된 영화 목록을 보여줍니다. 더 자세히 보고 싶은 영화를 클릭하면 관련 영화의 정보와 댓글, 그리고 비슷한 영화를 추천받을 수 있습니다.</p>
+<p align="center">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/a87520a4-6e94-4f90-882c-8bd5a1924ff4" width="80%">
+</p>
+
 ### deploy
 
-배포 주소 :
+배포 주소 : https://movie-trailer-tawny.vercel.app/
