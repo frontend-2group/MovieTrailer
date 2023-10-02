@@ -23,7 +23,7 @@ const DetailPage = () => {
   return (
     movieData !== undefined && (
       <DetailPageWrapper>
-        {videoData && (
+        {videoData.results[0] !== undefined && (
           <DetailMovieVideo
             src={`https://www.youtube.com/embed/${videoData.results[0].key}?autoplay=1&mute=1`}
             frameBorder="0"

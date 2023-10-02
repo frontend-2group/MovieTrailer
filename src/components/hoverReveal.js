@@ -27,7 +27,11 @@ const HoverRevealComponents = ({ movie, onOpenDetailPage, isFetching }) => {
       height="282px"
     >
       <MovieTrailer key={movie.id}>
-        <Poster src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
+        {movie.poster_path === null ? (
+          <img src="/images/noPoster.png" alt="no poster" />
+        ) : (
+          <Poster src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
+        )}
         <HoverReveal onClick={() => onOpenDetailPage(movie)}>
           <Rate>
             <span>★</span>
