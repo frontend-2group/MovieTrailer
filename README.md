@@ -65,7 +65,7 @@ Communication
 
 ### figma link
 
-디테일한 디자인은 아래 피그마 링크에서 확인 가능합니다 :
+디테일한 디자인은 아래 피그마 링크에서 확인 가능합니다 : </br>
 https://www.figma.com/file/pGQXz9HbHI4KCgcIov0fz5/%5B-FrontendGroup2-%5D-MovieTrailer?type=design&node-id=1669%3A162202&mode=design&t=TnpVgFm46yy8Bibl-1
 
 ### wire frame
@@ -91,13 +91,17 @@ https://www.figma.com/file/pGQXz9HbHI4KCgcIov0fz5/%5B-FrontendGroup2-%5D-MovieTr
 
 ### preview MV
 
-<p align="center">실제로 구현한 영화 트레일러 사이트 시연 영상입니다.</p>
-<p align="center">메인 화면에서 보여지는 영화 목록들은 무한 스크롤로 보여지는 형식이며 오른쪽 하단 scroll top 아이콘을 누르면 최상단으로 돌아갑니다.</p>
+<p align="center">아래는 실제로 구현한 영화 트레일러 사이트 시연 영상입니다. 더 자세한 결과물은 아래 배포 주소에서 확인하실 수 있습니다.</p>
+<p align="center">메인 화면에서 보여지는 영화 목록들은 무한 스크롤로 보여지는 형식이며 </br> 오른쪽 하단 scroll top 아이콘을 누르면 최상단으로 돌아갑니다.</p>
 <p align="center">
     <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/b979ddb6-6f47-4573-9888-c03c85c4f1e5" width="80%">
     <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/7b887ebb-f2e5-4376-8619-dd93b62698ca" width="80%">
 </p>
-<p align="center">검색 창에 키워드를 입력하면 키워드가 포함된 영화 목록을 보여줍니다. 더 자세히 보고 싶은 영화를 클릭하면 관련 영화의 정보와 댓글, 그리고 비슷한 영화를 추천받을 수 있습니다.</p>
+<p align="center">상단에 탭으로 영화를 목록 별로 지정해 볼 수 있습니다.</p>
+<p align="center">
+    <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/151c452f-1391-4953-bfb6-37ed2ec85f55" width="80%">
+</p>
+<p align="center">검색 창에 키워드를 입력하면 키워드가 포함된 영화 목록을 보여줍니다. </br> 더 자세히 보고 싶은 영화를 클릭하면 관련 영화의 정보와 댓글, 그리고 비슷한 영화를 추천받을 수 있습니다.</p>
 <p align="center">
     <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/7d50fb86-0820-4af8-9e28-197a30656468" width="80%">
     <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/91fe8506-dcfa-4bf4-ac40-3c9c76544c22" width="80%">
