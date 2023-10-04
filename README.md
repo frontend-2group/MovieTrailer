@@ -19,7 +19,17 @@
 
 ### developers
 
-김지원 안주현 오주연 이대경 정수현
+<table>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/kimjiwon2930"><img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/c07ac407-a652-49f7-9cf0-c6a17208c73a" width="100px;" alt="김지원"/><br /><sub><b>FE 김지원 </b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/Ahnjuhyeon"><img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/e95c0344-c357-4239-935c-8a7aeef52c79" width="100px;" alt="안주현"/><br /><sub><b>FE 안주현 </b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/55555-Jyeon"><img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/0e707134-bf36-4dda-a2f7-905ec894fc4f" width="100px;" alt="오주연"/><br /><sub><b>FE 오주연 </b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/LeeDaeGyeong"><img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/e8765d0e-d8ee-4560-b99f-954eab671446" width="100px;" alt="이대경"/><br /><sub><b>FE 이대경 </b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/mugi7794"><img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/5b5e9e19-99bd-424f-a6ea-6a9eafa8efa2" width="100px;" alt="정수현"/><br /><sub><b>FE 정수현 </b></sub></a><br /></td>
+     <tr/>
+  </tbody>
+</table>
 
 ### Stacks
 
@@ -91,7 +101,7 @@ https://www.figma.com/file/pGQXz9HbHI4KCgcIov0fz5/%5B-FrontendGroup2-%5D-MovieTr
 
 ### preview MV
 
-<p align="center">아래는 실제로 구현한 영화 트레일러 사이트 시연 영상입니다. 더 자세한 결과물은 아래 배포 주소에서 확인하실 수 있습니다.</p>
+<p align="left">아래는 실제로 구현한 영화 트레일러 사이트 시연 영상입니다. 더 자세한 결과물은 아래 배포 주소에서 확인하실 수 있습니다.</p>
 <p align="center">메인 화면에서 보여지는 영화 목록들은 무한 스크롤로 보여지는 형식이며 </br> 오른쪽 하단 scroll top 아이콘을 누르면 최상단으로 돌아갑니다.</p>
 <p align="center">
     <img src="https://github.com/frontend-2group/MovieTrailer/assets/134191817/b979ddb6-6f47-4573-9888-c03c85c4f1e5" width="80%">
