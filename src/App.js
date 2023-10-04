@@ -9,10 +9,6 @@ import router from "./route/route";
 import { ChakraProvider } from "@chakra-ui/react";
 import Cursor from "./components/cursor";
 
-// 아래 두 코드 터미널에 입력해서 설치해주세요
-// npm install react-query --force
-// npm install axios
-
 const queryClient = new QueryClient();
 function App() {
   return (
